@@ -1,0 +1,53 @@
+<html>
+<head>
+	<title>project2</title>
+	
+</head>
+
+<body >
+	<h2 style="background-color: yellow;">GIPHY API</h2>
+	<div  style="background-color: orange;">
+		    <form>
+		    	<table>
+		    		<tr>
+		    			<h1>SEARCH</h1>
+		    			<td><input type="text" id="searchKey" placeholder="Serach Gif images" ></td>
+		    			<td><input type="button" value="submit" onclick="func()" ></td>
+		    		</tr>
+		    	</table>
+				
+			</form>
+		<div id="results" class="results">
+		</div>
+	</div>
+	<script type="text/javascript">
+		function func()
+		{
+			alert("loading");
+			this.q=document.getElementById("searchKey").value;
+			const limit=100;
+		    const api="cfjrtFY2PPFZO1D5Pw6ek9iTi2ECSauF"
+		    var path=`https://api.giphy.com/v1/gifs/search?api_key=${api}&q=${q}&limit=${limit}`
+            fetch(path).then(function(res){
+			return res.json()
+		}).then(function(json){
+			var result=document.getElementById("results")
+			var out=" "
+			
+			json.data.forEach(function(obj){
+				console.log(obj)
+				const url=obj.images.fixed_width.url
+				const width=obj.images.fixed_width.width
+				const height=obj.images.fixed_width.height
+				const title=obj.title
+				out+=`<img id="img" src="${url}"width="${width}"height="${height}"alt="${title}">`
+			})
+			
+			result.innerHTML=out
+			}).catch(function(err){
+				console.log(err.message)
+		});
+		}
+	</script>
+</body>
+</html>
