@@ -1,0 +1,66 @@
+  <head>
+    <title>Moonproduct</title>
+    <link href="new.css" rel="stylesheet">
+    
+  </head>
+  <SCRIPT LANGUAGE="JavaScript1.2"><!--
+colors = new Array("gray","white")
+
+colorIndex = 0
+
+function changeColor() {
+ document.bgColor = colors[colorIndex]
+ colorIndex = (colorIndex + 1) % colors.length
+}
+
+function startColorChange() {
+ setInterval("changeColor()",1000)
+}
+
+window.onload = startColorChange
+// --></SCRIPT>
+  
+  <body>
+    <header>
+      <nav>
+        <ul id="nav_bar">
+          <li class="nav-links" id="gmail"><a href="#">Gmail</a></li>
+          <li class="nav-links"><a href="#">Images</a></li>
+          <li id="sign_in"><a href="#">Sign In</a></li>
+        </ul>  
+      </nav>  
+    </header>  
+    
+ 
+    <div class="google">
+      <a href="#" id="google_logo"><img src="http://knock.moonproduct.in/admin/image/2bccb21d7fc8824daf21/Logo.png"/></a>
+    </div>
+    
+    <!-- FORM SEARCH -->  
+    <div class="form">  
+      <form>
+        <label for="form-search"></label>
+        <input type="text" id="form-search" placeholder="Search Google or type URL">
+      </form>
+    </div>  
+    
+    <!-- BUTTONS -->
+    <div class= "buttons">  
+      <input type="submit" value="Google Search" id="google_search">
+      <input type="submit" value="I'm Feeling Lucky" id="im_feeling_lucky">
+    </div>
+      
+    <!-- FOOTER -->
+    <footer>
+        <ul class="footer-left">
+          <li>Advertising</li>
+          <li>Business</li>
+          <li>About</li> 
+        </ul>
+        <ul class="footer-right">    
+          <li>Privacy</a></li>
+          <li>Terms</a></li>
+          <li>Settings</a></li>
+        </ul>       
+    </footer>      
+  </body>
